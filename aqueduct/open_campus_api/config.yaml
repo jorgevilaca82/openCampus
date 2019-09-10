@@ -1,6 +1,6 @@
 database:
- username: dart
- password: dart
+ username: open_campus
+ password: 0p3n_c4mpu5&*
  host: localhost
- port: 5432
- databaseName: dart_test
+ port: 5433
+ databaseName: open_campus

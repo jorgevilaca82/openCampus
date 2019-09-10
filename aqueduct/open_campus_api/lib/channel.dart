@@ -5,6 +5,8 @@ import 'model/user.dart';
 import 'utility/html_template.dart';
 import 'open_campus_api.dart';
 
+import 'model/base/person.dart';
+
 /// This type initializes an application.
 ///
 /// Override methods in this class to set up routes and initialize services like
