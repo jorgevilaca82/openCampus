@@ -8,6 +8,8 @@ environment:
 
 dependencies:
   aqueduct: ^3.0.0
+  cpf:
+    git: https://github.com/softnode/cpf.git
 
 dev_dependencies:
   test: ^1.0.0

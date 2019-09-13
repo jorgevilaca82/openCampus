@@ -5,7 +5,7 @@ import 'model/user.dart';
 import 'utility/html_template.dart';
 import 'open_campus_api.dart';
 
-import 'model/base/person.dart';
+import 'model/base/pessoa.dart';
 
 /// This type initializes an application.
 ///
