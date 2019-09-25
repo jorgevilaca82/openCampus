@@ -1,11 +1,12 @@
+import 'package:open_campus_api/model/base/pessoa_fisica.dart';
+
 import 'controller/identity_controller.dart';
+import 'controller/pessoa_controller.dart';
 import 'controller/register_controller.dart';
 import 'controller/user_controller.dart';
 import 'model/user.dart';
-import 'utility/html_template.dart';
 import 'open_campus_api.dart';
-
-import 'model/base/pessoa.dart';
+import 'utility/html_template.dart';
 
 /// This type initializes an application.
 ///
@@ -71,6 +72,17 @@ class OpenCampusApiChannel extends ApplicationChannel
         .link(() => Authorizer.bearer(authServer))
         .link(() => UserController(context, authServer));
 
+    router.route('/example').linkFunction((request) async {
+      return Response.ok({'key': '1'});
+    });
+
+    router
+        .route('/pessoasFisicas/[:id]')
+        .link(() => ManagedObjectController<PessoaFisica>(context));
+
+    router
+        .route('/pessoa/:pessoaId/enderecos/[:id]')
+        .link(() => PessoaEnderecoController(context));
     return router;
   }
 

@@ -7,13 +7,14 @@ class ValidateCpf extends Validate {
       : super(onUpdate: onUpdate, onInsert: onInsert);
 
   @override
-  void validate(ValidationContext ctx, dynamic value) {
-    if (!validarCPF(value.toString())) ctx.addError("CPF inválido");
+  void validate(ValidationContext context, dynamic input) {
+    if (!validarCPF(input.toString()))
+      context.addError("CPF inválido");
   }
 }
 
 enum EstadoCivil {
-  Solteiro, Casado, Divorciado, UniaoEstavel
+  solteiro, casado, divorciado, uniaoEstavel
 }
 
 class PessoaFisica extends ManagedObject<_PessoaFisica>
