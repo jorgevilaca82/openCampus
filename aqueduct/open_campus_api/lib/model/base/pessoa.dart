@@ -35,6 +35,6 @@ class _Endereco {
   
   EnderecoTipo tipo;
 
-  @Relate(#endereco)
+  @Relate(#enderecos)
   Pessoa pessoa;
 }

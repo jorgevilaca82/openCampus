@@ -77,12 +77,13 @@ class OpenCampusApiChannel extends ApplicationChannel
     });
 
     router
-        .route('/pessoasFisicas/[:id]')
+        .route(ManagedObjectController.routePattern('pessoasFisicas'))
         .link(() => ManagedObjectController<PessoaFisica>(context));
 
     router
-        .route('/pessoa/:pessoaId/enderecos/[:id]')
-        .link(() => PessoaEnderecoController(context));
+      .route(ManagedObjectController.routePattern('pessoas/:pessoaId/enderecos'))
+      .link(() => PessoaEnderecoController(context));
+
     return router;
   }
 
