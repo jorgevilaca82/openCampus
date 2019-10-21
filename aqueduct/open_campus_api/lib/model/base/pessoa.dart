@@ -18,10 +18,36 @@ class _Pessoa {
   ManagedSet<Endereco> enderecos;
 }
 
-enum EnderecoTipo {
-  residencial,
-  comercial,
-  rural
+enum EnderecoTipo { residencial, comercial, rural }
+
+enum UnidadeFederativa {
+  AC,
+  AL,
+  AM,
+  AP,
+  BA,
+  CE,
+  DF,
+  ES,
+  GO,
+  MA,
+  MT,
+  MS,
+  MG,
+  PA,
+  PB,
+  PR,
+  PE,
+  PI,
+  RJ,
+  RN,
+  RS,
+  RO,
+  RR,
+  SC,
+  SP,
+  SE,
+  TO,
 }
 
 class Endereco extends ManagedObject<_Endereco> implements _Endereco {}
@@ -29,10 +55,24 @@ class Endereco extends ManagedObject<_Endereco> implements _Endereco {}
 class _Endereco {
   @primaryKey
   int id;
-  
+
   @Column()
   String cep;
-  
+
+  bool principal;
+
+  String complemento;
+
+  String localidade;
+
+  String numero;
+
+  String bairro;
+
+  String logradouro;
+
+  UnidadeFederativa uf;
+
   EnderecoTipo tipo;
 
   @Relate(#enderecos)
